@@ -58,7 +58,7 @@ uint32_t Moving_Average_Compute(uint32_t raw_data, FilterTypeDef* filter_struct)
 	filter_struct->Sum += raw_data;
 	filter_struct->Sum -= filter_struct->History[filter_struct->WindowPointer];
 	filter_struct->History[filter_struct->WindowPointer] = raw_data;
-	if(filter_struct->WindowPointer < WindowLength)
+	if(filter_struct->WindowPointer < WindowLength - 1)
 	{
 		filter_struct->WindowPointer += 1;
 	}
